@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>検索結果画面</title>
+    <!-- 使用するCSSファイル「/css/result.css」を指定 -->
+    <link rel="stylesheet" href="/css/result.css">
+</head>
+<body>
+	<h1>[検索結果画面]</h1>
+
+	<div class="searchTitle">
+		<!--【Ｑ１】レスポンスとして返ってきた searchWord を表示 -->
+		<span th:text="${searchWord}"></span>
+		<span>の検索結果を表示します</span>
+	</div>
+
+    <!--【Ｑ２】【Ｑ３】レスポンスとして返ってきた foodNameList の全件を１件ずつ取り出して変数 foodName に格納 -->
+    <div th:each="foodName:${foodNameList}" class="result-container">
+		<span>食品名:</span>
+		<!--【Ｑ４】変数 foodName に格納された食品名を１件ずつ表示 -->
+	   	<span th:text="${foodName}"></span>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+/*-------------------------------------------------------
+-- SpringBoot単元 使用SQL文
+-------------------------------------------------------*/
+
+-- sb_lesson データベース作成
+
+DROP DATABASE IF EXISTS sb_lesson; -- もしsb_lessonという名前のデータベースが存在してたら削除
+CREATE DATABASE sb_lesson; -- sb_lessonを新規作成
+ALTER DATABASE sb_lesson CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci; -- 作成したDBの利用宣言
+
+USE sb_lesson;
+
+
+-- food（食品）テーブル作成
+-- category_name, food_nameという二つのカラムを持つfoodデーブルをCREATE文で作成
+
+CREATE TABLE food (
+    category_name VARCHAR(255),
+    food_name VARCHAR(255)
+);
+
+
+-- food（食品）テーブル データ挿入
+-- 全5件のデータをINSERT文を使って挿入
+
+INSERT INTO food (category_name, food_name) VALUES ('野菜', 'トマト');
+INSERT INTO food (category_name, food_name) VALUES ('野菜', 'レタス');
+INSERT INTO food (category_name, food_name) VALUES ('果物', 'いちご');
+INSERT INTO food (category_name, food_name) VALUES ('果物', 'りんご');
+INSERT INTO food (category_name, food_name) VALUES ('果物', 'みかん');
+
+
+-- food（食品）テーブル データ確認
+-- SERECT文でfoodテーブルのデータ全件を抽出・表示してデータが正しく入ったか確認
+
+SELECT * FROM food;

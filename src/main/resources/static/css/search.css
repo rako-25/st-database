@@ -1,0 +1,13 @@
+select {
+  padding: 6px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}
+        
+button {
+  width: 120px;
+  height: 36px;
+  padding: 4px 10px;
+  font-size: 18px;
+}
